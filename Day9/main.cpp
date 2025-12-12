@@ -60,19 +60,9 @@ std::vector<std::vector<int>> getScoreboard(std::vector<Position> positions) {
     });
 
     std::vector<std::vector<int>> scores(20, std::vector<int>(20, 0));
-    int currentRow = -1;
-    int countInRow = 0;
-
     for (const auto& pos : positions) {
         int x = pos.x;
         int y = pos.y;
-
-        if (y != currentRow) {
-            currentRow = y;
-            countInRow = 0;
-        }
-        
-        countInRow++;
         if (x >= 0 && x < 20 && y >= 0 && y < 20) {
             scores[y][x]++; 
         }
